@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLe-mV-DzL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Beers List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BeersListViewController" customModule="BeerMenuAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUo-r2-GbP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VcA-ym-Ivb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3sA-Hn-0Mp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LWB-Tp-GEZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MUo-r2-GbP" firstAttribute="trailing" secondItem="LWB-Tp-GEZ" secondAttribute="trailing" id="K5w-C2-Rwj"/>
+                            <constraint firstItem="LWB-Tp-GEZ" firstAttribute="bottom" secondItem="MUo-r2-GbP" secondAttribute="bottom" id="TLR-tf-9zv"/>
+                            <constraint firstItem="MUo-r2-GbP" firstAttribute="leading" secondItem="LWB-Tp-GEZ" secondAttribute="leading" id="c1x-Ny-mPj"/>
+                            <constraint firstItem="MUo-r2-GbP" firstAttribute="top" secondItem="LWB-Tp-GEZ" secondAttribute="top" id="i7U-qh-7VK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wTw-4f-rSx"/>
+                    <connections>
+                        <outlet property="beerListTableView" destination="MUo-r2-GbP" id="hsY-B9-3w6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572.46376811594212" y="553.79464285714278"/>
+        </scene>
+        <!--Beer Details View Controller-->
+        <scene sceneID="LiP-cN-gqb">
+            <objects>
+                <viewController storyboardIdentifier="BeerDetailsViewController" id="bU0-XS-qaK" customClass="BeerDetailsViewController" customModule="BeerMenuAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Pg-RT-EuJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbD-Jk-a3L">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-HC-C7v">
+                                        <rect key="frame" x="345" y="0.0" width="53" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Dud-JH-jk1"/>
+                                            <constraint firstAttribute="width" constant="53" id="Uu4-Sa-qsU"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="buttonclosePressed" destination="bU0-XS-qaK" eventType="touchUpInside" id="3wD-WS-M56"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AD6-OJ-kwg"/>
+                                    <constraint firstItem="e2j-HC-C7v" firstAttribute="top" secondItem="dbD-Jk-a3L" secondAttribute="top" id="owo-Kt-kBg"/>
+                                    <constraint firstAttribute="bottom" secondItem="e2j-HC-C7v" secondAttribute="bottom" id="yIf-Lh-E8e"/>
+                                    <constraint firstAttribute="trailing" secondItem="e2j-HC-C7v" secondAttribute="trailing" constant="16" id="yNd-tH-I4D"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QKW-LW-MbW">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bU0-XS-qaK" id="GFt-W4-L4H"/>
+                                    <outlet property="delegate" destination="bU0-XS-qaK" id="nvM-YY-2Rd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ylP-y3-Bsa"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dbD-Jk-a3L" firstAttribute="leading" secondItem="ylP-y3-Bsa" secondAttribute="leading" id="Q0B-Kx-Kkh"/>
+                            <constraint firstItem="QKW-LW-MbW" firstAttribute="trailing" secondItem="ylP-y3-Bsa" secondAttribute="trailing" id="QyZ-Hg-p0E"/>
+                            <constraint firstItem="ylP-y3-Bsa" firstAttribute="bottom" secondItem="QKW-LW-MbW" secondAttribute="bottom" id="UGc-es-KoC"/>
+                            <constraint firstItem="QKW-LW-MbW" firstAttribute="leading" secondItem="ylP-y3-Bsa" secondAttribute="leading" id="cNf-Q6-DJO"/>
+                            <constraint firstItem="ylP-y3-Bsa" firstAttribute="trailing" secondItem="dbD-Jk-a3L" secondAttribute="trailing" id="cet-WO-6fC"/>
+                            <constraint firstItem="dbD-Jk-a3L" firstAttribute="top" secondItem="ylP-y3-Bsa" secondAttribute="top" id="h6o-3l-hfM"/>
+                            <constraint firstItem="QKW-LW-MbW" firstAttribute="top" secondItem="dbD-Jk-a3L" secondAttribute="bottom" id="vWC-sP-f2k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerDetailTableView" destination="QKW-LW-MbW" id="c8H-Sb-l4v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yy1-Qc-fV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="561.83035714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gsK-FC-zsY">
+            <objects>
+                <navigationController id="bLe-mV-DzL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G55-tf-S84">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rxn-Z5-0qO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGe-Pq-GeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1455" y="554"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
