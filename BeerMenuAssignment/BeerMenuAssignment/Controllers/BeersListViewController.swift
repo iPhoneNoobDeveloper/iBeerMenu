@@ -29,7 +29,6 @@ class BeersListViewController: UIViewController {
     func registerBeerTableViewCells() {
         beerListTableView.register(BeerTableViewCell.cellNib(), forCellReuseIdentifier: BeerTableViewCell.reUseIdentifier)
     }
-
 }
 
 extension BeersListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -43,6 +42,8 @@ extension BeersListViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.reUseIdentifier, for: indexPath) as? BeerTableViewCell {
             
             let beer = viewModel.beers[indexPath.row]
+            
+//            caching not working - need more time to go throught the issue
 //            ImageCache.publicCache.load(url: beer.imageURL as! NSURL, item: Item(image: UIImage(), url: beer.imageURL!)) { (fetchedItem, image) in
 //                if let img = image, img != fetchedItem.image {
 //                    cell.beerImageView.image = img
@@ -53,7 +54,6 @@ extension BeersListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.nameLabel.text = beer.name
             cell.taglineLabel.text = beer.tagline
-            cell.layoutIfNeeded()
             return cell
         }
         return UITableViewCell()

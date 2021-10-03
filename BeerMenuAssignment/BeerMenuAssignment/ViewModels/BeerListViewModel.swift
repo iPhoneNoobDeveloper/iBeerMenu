@@ -23,7 +23,7 @@ class BeerListViewModel {
             } else {
                 
                 DispatchQueue.main.async {
-                    let viewController = (UIApplication.shared.keyWindow?.rootViewController as? UINavigationController)?.topViewController
+                    let viewController = (UIApplication.shared.windows.first!.rootViewController as? UINavigationController)?.topViewController
                     let cancel = "Cancel"
                     viewController?.displayAlertOnViewController(title: nil, message: error?.description ?? "Something went wrong! Please try again", actionTitles: [cancel], actionStyles: [.default,], actions: [nil])
                 }

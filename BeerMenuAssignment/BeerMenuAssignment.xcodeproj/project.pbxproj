@@ -18,6 +18,10 @@
 		46AFEDF7270A361E004921BA /* BeersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEDF6270A361E004921BA /* BeersListViewController.swift */; };
 		46AFEE00270A3F99004921BA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEDFF270A3F99004921BA /* ImageCache.swift */; };
 		46AFEE05270A4029004921BA /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEE04270A4029004921BA /* ImageURLProtocol.swift */; };
+		46AFEE0A270A48D8004921BA /* BeersListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEE09270A48D8004921BA /* BeersListViewControllerTests.swift */; };
+		46AFEE12270A4D34004921BA /* BeerDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEE11270A4D34004921BA /* BeerDetailsViewControllerTests.swift */; };
+		46AFEE17270A4E46004921BA /* BeerTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEE16270A4E46004921BA /* BeerTableViewCellTests.swift */; };
+		46AFEE1C270A50A0004921BA /* BeerDetailsTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFEE1B270A50A0004921BA /* BeerDetailsTableViewCellTests.swift */; };
 		46B3955A27087A8E00CA754C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3955927087A8E00CA754C /* AppDelegate.swift */; };
 		46B3955C27087A8E00CA754C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3955B27087A8E00CA754C /* SceneDelegate.swift */; };
 		46B3956127087A8E00CA754C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B3955F27087A8E00CA754C /* Main.storyboard */; };
@@ -58,6 +62,10 @@
 		46AFEDF6270A361E004921BA /* BeersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersListViewController.swift; sourceTree = "<group>"; };
 		46AFEDFF270A3F99004921BA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		46AFEE04270A4029004921BA /* ImageURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
+		46AFEE09270A48D8004921BA /* BeersListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersListViewControllerTests.swift; sourceTree = "<group>"; };
+		46AFEE11270A4D34004921BA /* BeerDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		46AFEE16270A4E46004921BA /* BeerTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCellTests.swift; sourceTree = "<group>"; };
+		46AFEE1B270A50A0004921BA /* BeerDetailsTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsTableViewCellTests.swift; sourceTree = "<group>"; };
 		46B3955627087A8E00CA754C /* BeerMenuAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerMenuAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B3955927087A8E00CA754C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B3955B27087A8E00CA754C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +179,10 @@
 			children = (
 				46B3957027087A8F00CA754C /* BeerMenuAssignmentTests.swift */,
 				46B3957227087A8F00CA754C /* Info.plist */,
+				46AFEE09270A48D8004921BA /* BeersListViewControllerTests.swift */,
+				46AFEE11270A4D34004921BA /* BeerDetailsViewControllerTests.swift */,
+				46AFEE16270A4E46004921BA /* BeerTableViewCellTests.swift */,
+				46AFEE1B270A50A0004921BA /* BeerDetailsTableViewCellTests.swift */,
 			);
 			path = BeerMenuAssignmentTests;
 			sourceTree = "<group>";
@@ -364,7 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AFEE12270A4D34004921BA /* BeerDetailsViewControllerTests.swift in Sources */,
+				46AFEE0A270A48D8004921BA /* BeersListViewControllerTests.swift in Sources */,
 				46B3957127087A8F00CA754C /* BeerMenuAssignmentTests.swift in Sources */,
+				46AFEE17270A4E46004921BA /* BeerTableViewCellTests.swift in Sources */,
+				46AFEE1C270A50A0004921BA /* BeerDetailsTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

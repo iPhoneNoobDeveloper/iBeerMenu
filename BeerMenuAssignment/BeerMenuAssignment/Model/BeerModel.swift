@@ -8,17 +8,17 @@
 import Foundation
 import UIKit
 
-struct Beer: Decodable {
-    let id: Int
-    let name: String
-    let tagline: String
-    let firstBrewed: String
-    let imageURL: URL?
+struct Beer: Codable {
+    var id: Int
+    var name: String
+    var tagline: String
+    var firstBrewed: String
+    var imageURL: URL?
     var image: UIImage? = nil
-    let abv: Double
-    let ibu: Double?
-    let description: String
-    let brewersTips: String
+    var abv: Double
+    var ibu: Double?
+    var description: String
+    var brewersTips: String
     
     private enum CodingKeys: String, CodingKey {
         case id, name, tagline, abv, ibu, description
