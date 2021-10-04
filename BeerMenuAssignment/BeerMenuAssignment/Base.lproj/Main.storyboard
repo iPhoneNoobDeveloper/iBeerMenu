@@ -55,13 +55,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-HC-C7v">
-                                        <rect key="frame" x="345" y="0.0" width="53" height="50"/>
+                                        <rect key="frame" x="368" y="0.0" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Dud-JH-jk1"/>
-                                            <constraint firstAttribute="width" constant="53" id="Uu4-Sa-qsU"/>
+                                            <constraint firstAttribute="height" constant="30" id="Dud-JH-jk1"/>
+                                            <constraint firstAttribute="width" constant="30" id="Uu4-Sa-qsU"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="buttonclosePressed" destination="bU0-XS-qaK" eventType="touchUpInside" id="3wD-WS-M56"/>
+                                            <action selector="buttonclosePressed" destination="bU0-XS-qaK" eventType="touchUpInside" id="oBu-vv-Tg0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -69,7 +69,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AD6-OJ-kwg"/>
                                     <constraint firstItem="e2j-HC-C7v" firstAttribute="top" secondItem="dbD-Jk-a3L" secondAttribute="top" id="owo-Kt-kBg"/>
-                                    <constraint firstAttribute="bottom" secondItem="e2j-HC-C7v" secondAttribute="bottom" id="yIf-Lh-E8e"/>
+                                    <constraint firstAttribute="bottom" secondItem="e2j-HC-C7v" secondAttribute="bottom" constant="20" id="yIf-Lh-E8e"/>
                                     <constraint firstAttribute="trailing" secondItem="e2j-HC-C7v" secondAttribute="trailing" constant="16" id="yNd-tH-I4D"/>
                                 </constraints>
                             </view>

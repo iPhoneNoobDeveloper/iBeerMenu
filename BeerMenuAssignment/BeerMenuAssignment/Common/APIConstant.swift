@@ -8,7 +8,7 @@
 import Foundation
 
 enum ConfigUrl {
-    static let API_BASE_URL = "https://api.punkapi.com/v2/beers"
+    static let API_BASE_URL = "https://api.punkapi.com/v2/beers?page="
 }
 
 enum AppStrings {

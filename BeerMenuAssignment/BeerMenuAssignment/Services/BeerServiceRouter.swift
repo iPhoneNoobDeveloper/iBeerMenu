@@ -15,9 +15,10 @@ class BeerServiceRouter {
     }()
     
 
-    func getBeerList(completion:@escaping ([Beer]?, Int, String?) -> ()) {
-       
-        let dataTask = URLSession.shared.dataTask(with: self.urlPath) { (data, response, error) in
+    func getBeerList(currentPage: Int, completion:@escaping ([Beer]?, Int, String?) -> ()) {
+        let urlPath = URL(string:"\(ConfigUrl.API_BASE_URL)\(currentPage)")
+        print(urlPath as Any)
+        let dataTask = URLSession.shared.dataTask(with: urlPath!) { (data, response, error) in
             if (error != nil) {
                 completion(nil, 0, error?.localizedDescription)
             } else {
@@ -39,7 +40,7 @@ class BeerServiceRouter {
                             if !beers.isEmpty {
                                 completion(beers, (httpResponse.statusCode), nil)
                             } else {
-                                completion(nil, (httpResponse.statusCode), "No records found!")
+                                completion(nil, (httpResponse.statusCode), "")
                             }
                         } catch {
                             completion(nil, (httpResponse.statusCode), "Invalid response")

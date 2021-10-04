@@ -18,14 +18,9 @@ class BeersListViewController: UIViewController {
 
         self.title = AppStrings.navigationTitle
         self.registerBeerTableViewCells()
-        self.viewModel.getBeerDetails { [weak self] in
-            DispatchQueue.main.async {
-                guard let view = self else { return }
-                view.beerListTableView.reloadData()
-            }
-        }
+        viewModel.loadBeerDetails()
     }
-
+    
     func registerBeerTableViewCells() {
         beerListTableView.register(BeerTableViewCell.cellNib(), forCellReuseIdentifier: BeerTableViewCell.reUseIdentifier)
     }
@@ -42,15 +37,12 @@ extension BeersListViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.reUseIdentifier, for: indexPath) as? BeerTableViewCell {
             
             let beer = viewModel.beers[indexPath.row]
-            
-//            caching not working - need more time to go throught the issue
-//            ImageCache.publicCache.load(url: beer.imageURL as! NSURL, item: Item(image: UIImage(), url: beer.imageURL!)) { (fetchedItem, image) in
-//                if let img = image, img != fetchedItem.image {
-//                    cell.beerImageView.image = img
-//                }
-//            }
             if let imageURL = beer.imageURL {
-                cell.beerImageView.downloadBeerImageFrom(URL: imageURL, contentMode: .scaleAspectFit)
+                cell.beerImageView.image = UIImage(named: "beer")
+                ImageDownloader.shared.downloadImage(with: imageURL.absoluteString, completionHandler: { (image, cached) in
+                    cell.beerImageView.image = image
+
+                }, placeholderImage: UIImage(named: "beer"))
             }
             cell.nameLabel.text = beer.name
             cell.taglineLabel.text = beer.tagline
@@ -65,5 +57,12 @@ extension BeersListViewController: UITableViewDelegate, UITableViewDataSource {
         let productDetailViewController = storyboard.instantiateViewController(withIdentifier: "BeerDetailsViewController") as! BeerDetailsViewController
         productDetailViewController.beerDetail = self.viewModel.beers[indexPath.row]
         navigationController?.pushViewController(productDetailViewController, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !viewModel.isLoadingList){
+            viewModel.isLoadingList = true
+            viewModel.loadMoreBeersForList()
+        }
     }
 }

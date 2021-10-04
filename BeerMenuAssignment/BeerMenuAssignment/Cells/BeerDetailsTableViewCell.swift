@@ -70,7 +70,11 @@ class BeerDetailsTableViewCell: UITableViewCell {
         self.brewerTipLabel.text = beer.brewersTips
         
         if let imageURL = beer.imageURL {
-            self.beerImageView.downloadBeerImageFrom(URL: imageURL, contentMode: .scaleAspectFit)
+            self.beerImageView.image = UIImage(named: "beer")
+            ImageDownloader.shared.downloadImage(with: imageURL.absoluteString, completionHandler: { (image, cached) in
+                self.beerImageView.image = image
+
+            }, placeholderImage: UIImage(named: "beer"))
         }
     }
     
