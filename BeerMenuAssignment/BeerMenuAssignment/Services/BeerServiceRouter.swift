@@ -17,7 +17,7 @@ class BeerServiceRouter {
 
     func getBeerList(currentPage: Int, completion:@escaping ([Beer]?, Int, String?) -> ()) {
         let urlPath = URL(string:"\(ConfigUrl.API_BASE_URL)\(currentPage)")
-        print(urlPath as Any)
+//        print(urlPath as Any)
         let dataTask = URLSession.shared.dataTask(with: urlPath!) { (data, response, error) in
             if (error != nil) {
                 completion(nil, 0, error?.localizedDescription)
@@ -29,7 +29,7 @@ class BeerServiceRouter {
                 }
                 
                 if let httpResponse = response as? HTTPURLResponse {
-                    print(httpResponse.statusCode)
+//                    print(httpResponse.statusCode)
                     
                     if (httpResponse.statusCode == 200) {
                         
